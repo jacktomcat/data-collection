@@ -1,0 +1,11 @@
+{
+    "namespace": "com.chsoft.datacollection.entity",
+    "type": "record",
+    "name": "Video",
+    "fields": [
+        {"name": "id", "type": "int" },
+        {"name": "videoName", "type": "string" },
+        {"name": "desc", "type": [ "string", "null" ] },
+        {"name": "status", "type": "int" }
+    ]
+}
