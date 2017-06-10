@@ -10,8 +10,8 @@ import org.apache.avro.specific.SpecificData;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4450959518153261588L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.chsoft.datacollection.entity\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"userName\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phone\",\"type\":[\"string\",\"null\"]}]}");
+  private static final long serialVersionUID = -7138905808681617879L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.chsoft.datacollection.entity\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"userName\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phone\",\"type\":[\"string\",\"null\"],\"default\":\"110\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int id;
   @Deprecated public java.lang.CharSequence userName;
