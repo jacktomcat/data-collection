@@ -1,0 +1,12 @@
+{
+    "namespace": "com.chsoft.datacollection.entity",
+    "type": "record",
+    "name": "User",
+    "fields": [
+        {"name": "id", "type": "int" },
+        {"name": "userName", "type": "string"},
+        {"name": "age", "type": "int" },
+        {"name": "phone", "type": [ "string", "null" ],"default":"110" },
+        {"name": "address", "type": "string" }
+    ]
+}

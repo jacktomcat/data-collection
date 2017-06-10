@@ -10,13 +10,14 @@ import org.apache.avro.specific.SpecificData;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7138905808681617879L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.chsoft.datacollection.entity\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"userName\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phone\",\"type\":[\"string\",\"null\"],\"default\":\"110\"}]}");
+  private static final long serialVersionUID = -8916490669823584855L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"com.chsoft.datacollection.entity\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"userName\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"},{\"name\":\"phone\",\"type\":[\"string\",\"null\"],\"default\":\"110\"},{\"name\":\"address\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int id;
   @Deprecated public java.lang.CharSequence userName;
   @Deprecated public int age;
   @Deprecated public java.lang.CharSequence phone;
+  @Deprecated public java.lang.CharSequence address;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -31,12 +32,14 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
    * @param userName The new value for userName
    * @param age The new value for age
    * @param phone The new value for phone
+   * @param address The new value for address
    */
-  public User(java.lang.Integer id, java.lang.CharSequence userName, java.lang.Integer age, java.lang.CharSequence phone) {
+  public User(java.lang.Integer id, java.lang.CharSequence userName, java.lang.Integer age, java.lang.CharSequence phone, java.lang.CharSequence address) {
     this.id = id;
     this.userName = userName;
     this.age = age;
     this.phone = phone;
+    this.address = address;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -47,6 +50,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 1: return userName;
     case 2: return age;
     case 3: return phone;
+    case 4: return address;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -59,6 +63,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     case 1: userName = (java.lang.CharSequence)value$; break;
     case 2: age = (java.lang.Integer)value$; break;
     case 3: phone = (java.lang.CharSequence)value$; break;
+    case 4: address = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -128,6 +133,22 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
+   * Gets the value of the 'address' field.
+   * @return The value of the 'address' field.
+   */
+  public java.lang.CharSequence getAddress() {
+    return address;
+  }
+
+  /**
+   * Sets the value of the 'address' field.
+   * @param value the value to set.
+   */
+  public void setAddress(java.lang.CharSequence value) {
+    this.address = value;
+  }
+
+  /**
    * Creates a new User RecordBuilder.
    * @return A new User RecordBuilder
    */
@@ -163,6 +184,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence userName;
     private int age;
     private java.lang.CharSequence phone;
+    private java.lang.CharSequence address;
 
     /** Creates a new Builder */
     private Builder() {
@@ -191,6 +213,10 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         this.phone = data().deepCopy(fields()[3].schema(), other.phone);
         fieldSetFlags()[3] = true;
       }
+      if (isValidValue(fields()[4], other.address)) {
+        this.address = data().deepCopy(fields()[4].schema(), other.address);
+        fieldSetFlags()[4] = true;
+      }
     }
 
     /**
@@ -214,6 +240,10 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       if (isValidValue(fields()[3], other.phone)) {
         this.phone = data().deepCopy(fields()[3].schema(), other.phone);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.address)) {
+        this.address = data().deepCopy(fields()[4].schema(), other.address);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -371,6 +401,45 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /**
+      * Gets the value of the 'address' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getAddress() {
+      return address;
+    }
+
+    /**
+      * Sets the value of the 'address' field.
+      * @param value The value of 'address'.
+      * @return This builder.
+      */
+    public com.chsoft.datacollection.entity.User.Builder setAddress(java.lang.CharSequence value) {
+      validate(fields()[4], value);
+      this.address = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'address' field has been set.
+      * @return True if the 'address' field has been set, false otherwise.
+      */
+    public boolean hasAddress() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'address' field.
+      * @return This builder.
+      */
+    public com.chsoft.datacollection.entity.User.Builder clearAddress() {
+      address = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     @Override
     public User build() {
       try {
@@ -379,6 +448,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase implements
         record.userName = fieldSetFlags()[1] ? this.userName : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.age = fieldSetFlags()[2] ? this.age : (java.lang.Integer) defaultValue(fields()[2]);
         record.phone = fieldSetFlags()[3] ? this.phone : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.address = fieldSetFlags()[4] ? this.address : (java.lang.CharSequence) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
