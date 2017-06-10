@@ -1,0 +1,14 @@
+option java_package = "com.chsoft.datacollection.entity.protobuf";
+option java_outer_classname = "UserEntity";
+
+message User {  
+  required int32 id = 1;
+  required string userName = 2;
+  required int32 age = 3;
+  optional string phone = 4;
+  required string address = 5;
+}
+
+message Users {  
+  repeated User user = 1;
+}
