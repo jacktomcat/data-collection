@@ -6,3 +6,8 @@ struct User{
   4: string phone, 
   5: string address,    
 }
+
+
+struct Users{  
+  1: required list<User> users,  
+}
